@@ -174,3 +174,59 @@ function getNextPalindromeDate(date) {
 //     year: 2020
 // }
 // console.log(getNextPalindromeDate(date));
+
+function getPreviousDate(date) {
+    var day = date.day - 1;
+    var month = date.month;
+    var year = date.year;
+
+    var daysInMonths = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+    if(day === 0){
+
+    }
+    else{
+
+    }
+}
+
+function getPreviousPalindromeDate(date) {
+
+}
+
+
+var dobInput = document.querySelector('#dob-input');
+var showButton = document.querySelector('#btn');
+var resultArea = document.querySelector('#result');
+
+function clickHandler(e){
+    // console.log(dobInput.value);
+
+    var bdayString = dobInput.value;
+
+    if(bdayString !== ''){
+        var listOfDate = bdayString.split('-');
+        var date = {
+            day: Number(listOfDate[2]),
+            month: Number(listOfDate[1]),
+            year: Number(listOfDate[0])
+        };
+        // console.log(date);
+
+        var isPalindrome = checkPalindromeForAllDateFormats(date);
+        console.log(isPalindrome);
+
+        if(isPalindrome){
+            resultArea.innerText = "Yes, your birthday is palindrome 😁";
+        }
+        else{
+            var [ctr, nextDate] = getNextPalindromeDate(date);
+            resultArea.innerText = `Next palindrome date
+             is ${nextDate.day}-${nextDate.month}-${nextDate.year}. you
+             missed it by ${ctr} days.`
+        }
+    }
+
+}
+
+showButton.addEventListener("click", clickHandler);
