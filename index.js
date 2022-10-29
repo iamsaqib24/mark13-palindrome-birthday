@@ -68,3 +68,23 @@ function getDateInAllFormats(date) {
 //     year: 2022
 // }
 // console.log(getDateInAllFormats(date));
+
+function checkPalindromeForAllDateFormats(date) {
+    var listOfPalindromes = getDateInAllFormats(date);
+    var result = false;
+
+    for (let index = 0; index < listOfPalindromes.length; index++) {
+        if(isPalindrome(listOfPalindromes[index])){
+            result = true;
+            break;
+        }
+    }
+    return result;
+}
+
+// var date = {
+//     day: 5,
+//     month: 11,
+//     year: 2022
+// }
+// console.log(checkPalindromeForAllDateFormats(date));
