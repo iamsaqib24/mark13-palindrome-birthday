@@ -224,6 +224,9 @@ function clickHandler(e){
             resultArea.innerText = `Next palindrome date is ${nextDate.day}-${nextDate.month}-${nextDate.year}. you missed it by ${ctr} days.`
         }
     }
+    else {
+        resultArea = alert("Input field can't be empty");
+    }
 
 }
 
